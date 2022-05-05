@@ -11,14 +11,15 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 
-const PhotoComponent: React.FC = () => {
+const PhotoComponent: React.FC<{page: number}> = ({...props}) => {
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   const [loading, setLoading] = useState(false)
+  const { page } = props;
 
   useEffect( () => {
     const fetchPhotos = async () => {
       setLoading(true)
-      const response = await getPhotos( 1000 );
+      const response = await getPhotos( 1000, page );
       const transformedData = response.photos.map( (photo: any) => {
         let newPhoto: IPhoto;
         newPhoto = {id: photo.id, rover_id: photo.rover_id, name: photo.name, img_src: photo.img_src}
@@ -29,7 +30,7 @@ const PhotoComponent: React.FC = () => {
     }
 
     fetchPhotos();
-  }, [])
+  }, [page])
 
   return (
     <Box sx={{ flexGrow: 1}}>
