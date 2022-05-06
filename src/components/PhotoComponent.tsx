@@ -65,7 +65,11 @@ const PhotoComponent: React.FC<{page: number, camera: string}> = ({...props}) =>
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="medium" variant='outlined' style={{borderRadius: 15}}>View full size</Button>
+                  <Button size="medium" variant='outlined' style={{borderRadius: 15}}
+                    onClick={ () => window.open(photo.img_src)}
+                  >
+                    View full size
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>
