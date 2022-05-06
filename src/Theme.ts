@@ -7,10 +7,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: [
-      'Nunito', 
-      'sans-serif'
-    ].join('')
+    fontFamily: 'Nunito, sans-serif' 
   }
 });
 

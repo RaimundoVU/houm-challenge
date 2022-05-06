@@ -7,3 +7,4 @@ para ser mas exactos la *Mars Rover Photo*
 
 Decidi usar esta Api porque a mi parecer tiene suficiente información para filtrar y mostrar.
 
+El sitio en producción esta alojado en https://incomparable-duckanoo-05b96d.netlify.app/
